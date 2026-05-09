@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phongsakorn Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      border-left: 1px solid #2f3336;
+      border-right: 1px solid #2f3336;
+      min-height: 100vh;
+      background: black;
+    }
+
+    .header {
+      padding: 15px 20px;
+      border-bottom: 1px solid #2f3336;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .header p {
+      color: #71767b;
+      margin-top: 4px;
+    }
+
+    .cover {
+      position: relative;
+    }
+
+    .cover img.banner {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid black;
+      object-fit: cover;
+      position: absolute;
+      bottom: -75px;
+      left: 20px;
+      background: black;
+    }
+
+    .profile {
+      padding: 90px 20px 30px;
+      border-bottom: 1px solid #2f3336;
+    }
+
+    .portfolio-btn {
+      float: right;
+      border: 1px solid #555;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: transparent;
+      color: white;
+      font-weight: bold;
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .username {
+      color: #71767b;
+      margin-top: 5px;
+    }
+
+    .bio {
+      margin-top: 20px;
+      line-height: 1.8;
+      color: #e7e9ea;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #16181c;
+      border: 1px solid #2f3336;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #2f3336;
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 12px;
+    }
+
+    .card p {
+      color: #71767b;
+      margin-top: 5px;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #2f3336;
+    }
+
+    .tab {
+      text-align: center;
+      padding: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab:hover {
+      background: #111;
+    }
+
+    .post {
+      padding: 20px;
+      border-bottom: 1px solid #2f3336;
+      transition: 0.3s;
+    }
+
+    .post:hover {
+      background: #080808;
+    }
+
+    .post-top {
+      display: flex;
+      gap: 12px;
+    }
+
+    .post-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .post-name {
+      font-weight: bold;
+    }
+
+    .post-user {
+      color: #71767b;
+      margin-left: 5px;
+    }
+
+    .post-text {
+      margin-top: 10px;
+      line-height: 1.7;
+      color: #f1f1f1;
+    }
+
+    .post-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 18px;
+      color: #71767b;
+      max-width: 400px;
+    }
+
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        bottom: -60px;
+      }
+
+      .profile {
+        padding-top: 75px;
+      }
+
+      .name {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="header">
+      <h1>Phongsakorn Ano</h1>
+      <p>Logistics & Supply Chain Management</p>
+    </div>
+
+    <div class="cover">
+      <img src="ltm-cover.png" class="banner">
+      <img src="profile.jpg" class="profile-img">
+    </div>
+
+    <div class="profile">
+      <button class="portfolio-btn">Portfolio</button>
+
+      <div class="name">Phongsakorn Ano</div>
+      <div class="username">@phongsakorn</div>
+
+      <div class="bio">
+        🎓 รหัสนักศึกษา: 6650100781 <br>
+        🏫 คณะบริหารธุรกิจ สาขาการจัดการโลจิสติกส์และซัพพลายเชน <br>
+        🚚 สนใจด้าน Warehouse Management และ Supply Chain <br>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+
+        <div class="skills">
+          <div class="skill">Warehouse Management</div>
+          <div class="skill">Route Optimization</div>
+          <div class="skill">Supply Chain</div>
+          <div class="skill">Inventory Control</div>
+          <div class="skill">Microsoft Excel</div>
+          <div class="skill">Logistics Planning</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Experience</h2>
+
+        <div class="card">
+          <h3>DHL eCommerce</h3>
+          <p>Internship • Logistics Operations</p>
+        </div>
+
+        <div class="card">
+          <h3>Jastel</h3>
+          <p>Supply Chain & Transport Coordination</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Contact</h2>
+
+        <div class="card">
+          <p>📧 your-email@gmail.com</p>
+          <p>🔗 linkedin.com/in/phongsakorn</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <div class="tab">Posts</div>
+      <div class="tab">Skills</div>
+      <div class="tab">Experience</div>
+      <div class="tab">Contact</div>
+    </div>
+
+    <div class="post">
+      <div class="post-top">
+        <img src="profile.jpg" class="post-avatar">
+
+        <div>
+          <div>
+            <span class="post-name">Phongsakorn Ano</span>
+            <span class="post-user">@phongsakorn · 2h</span>
+          </div>
+
+          <div class="post-text">
+            กำลังพัฒนาทักษะด้านโลจิสติกส์และการจัดการซัพพลายเชน พร้อมเรียนรู้ระบบการขนส่งและการบริหารคลังสินค้า 🚚
+          </div>
+
+          <div class="post-actions">
+            <span>💬 18</span>
+            <span>🔁 7</span>
+            <span>❤️ 142</span>
+            <span>📤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-top">
+        <img src="profile.jpg" class="post-avatar">
+
+        <div>
+          <div>
+            <span class="post-name">Phongsakorn Ano</span>
+            <span class="post-user">@phongsakorn · 5h</span>
+          </div>
+
+          <div class="post-text">
+            สนใจด้าน Route Optimization และ Warehouse Management เพื่อเพิ่มประสิทธิภาพการขนส่งและการจัดการสินค้า 📦
+          </div>
+
+          <div class="post-actions">
+            <span>💬 12</span>
+            <span>🔁 5</span>
+            <span>❤️ 96</span>
+            <span>📤</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
