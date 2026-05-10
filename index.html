@@ -1,388 +1,493 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phongsakorn Portfolio</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-     ```css
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
 
-body {
-  background: #f5f7fa;
-  color: #111827;
-  display: flex;
-  justify-content: center;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-.container {
-  width: 100%;
-  max-width: 700px;
-  background: white;
-  min-height: 100vh;
-  border-left: 1px solid #e5e7eb;
-  border-right: 1px solid #e5e7eb;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Header */
+    body {
+      background: #f8fafc;
+      color: #111827;
+      line-height: 1.7;
+    }
 
-.header {
-  padding: 16px 20px;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  z-index: 100;
-}
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
 
-.header h1 {
-  font-size: 24px;
-  color: #111827;
-}
+    /* NAVBAR */
 
-.header p {
-  color: #6b7280;
-  margin-top: 5px;
-}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-/* Cover */
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
 
-.cover {
-  position: relative;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
 
-.banner {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
+    .menu {
+      display: flex;
+      gap: 30px;
+    }
 
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 5px solid white;
-  object-fit: cover;
-  position: absolute;
-  left: 20px;
-  bottom: -75px;
-  background: white;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
+    .menu a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-/* Profile */
+    .menu a:hover {
+      color: #2563eb;
+    }
 
-.profile {
-  padding: 90px 20px 30px;
-  border-bottom: 1px solid #e5e7eb;
-}
+    /* HERO */
 
-.portfolio-btn {
-  float: right;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: none;
-  background: #111827;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .hero {
+      padding: 90px 0 70px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
 
-.portfolio-btn:hover {
-  opacity: 0.9;
-}
+    .hero-text h1 {
+      font-size: 64px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
 
-.name {
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #111827;
-}
+    .hero-text span {
+      color: #2563eb;
+    }
 
-.username {
-  color: #6b7280;
-  margin-top: 5px;
-}
+    .hero-text p {
+      color: #6b7280;
+      font-size: 18px;
+      margin-bottom: 35px;
+      max-width: 600px;
+    }
 
-.bio {
-  margin-top: 20px;
-  line-height: 1.8;
-  color: #374151;
-}
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
-/* Sections */
+    .btn {
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
 
-.section {
-  margin-top: 35px;
-}
+    .btn-primary {
+      background: #111827;
+      color: white;
+    }
 
-.section h2 {
-  margin-bottom: 15px;
-  font-size: 22px;
-  color: #111827;
-}
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
 
-/* Skills */
+    .btn-secondary {
+      border: 1px solid #d1d5db;
+      color: #111827;
+      background: white;
+    }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
 
-.skill {
-  background: #eff6ff;
-  color: #2563eb;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-}
+    .hero-image {
+      position: relative;
+    }
 
-/* Cards */
+    .hero-image img {
+      width: 100%;
+      border-radius: 30px;
+      object-fit: cover;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
 
-.card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 18px;
-  padding: 18px;
-  margin-top: 12px;
-  transition: 0.3s;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-}
+    /* SECTIONS */
 
-.card:hover {
-  transform: translateY(-2px);
-}
+    section {
+      padding: 80px 0;
+    }
 
-.card h3 {
-  color: #111827;
-}
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
 
-.card p {
-  color: #6b7280;
-  margin-top: 6px;
-}
+    .section-desc {
+      color: #6b7280;
+      margin-bottom: 45px;
+      max-width: 700px;
+    }
 
-/* Tabs */
+    /* CARDS */
 
-.tabs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-bottom: 1px solid #e5e7eb;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
 
-.tab {
-  text-align: center;
-  padding: 18px;
-  cursor: pointer;
-  transition: 0.3s;
-  color: #374151;
-  font-weight: 600;
-}
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid #e5e7eb;
+      transition: 0.35s;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.03);
+    }
 
-.tab:hover {
-  background: #f3f4f6;
-}
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px rgba(0,0,0,0.08);
+    }
 
-/* Posts */
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
 
-.post {
-  padding: 22px;
-  border-bottom: 1px solid #e5e7eb;
-  transition: 0.3s;
-}
+    .card p {
+      color: #6b7280;
+    }
 
-.post:hover {
-  background: #f9fafb;
-}
+    /* SKILLS */
 
-.post-top {
-  display: flex;
-  gap: 12px;
-}
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 25px;
+    }
 
-.post-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+    .skill {
+      background: white;
+      border: 1px solid #dbeafe;
+      color: #2563eb;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(37,99,235,0.05);
+    }
 
-.post-name {
-  font-weight: bold;
-  color: #111827;
-}
+    /* EXPERIENCE */
 
-.post-user {
-  color: #6b7280;
-  margin-left: 5px;
-}
+    .experience-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
 
-.post-text {
-  margin-top: 10px;
-  line-height: 1.8;
-  color: #374151;
-}
+    .experience-card:hover {
+      transform: translateY(-4px);
+    }
 
-.post-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 18px;
-  max-width: 400px;
-  color: #6b7280;
-}
+    .experience-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-/* Mobile */
+    .experience-card p {
+      color: #6b7280;
+    }
 
-@media (max-width: 768px) {
+    /* CONTACT */
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    bottom: -60px;
-  }
+    .contact-box {
+      background: linear-gradient(to right, #111827, #1f2937);
+      border-radius: 30px;
+      padding: 50px;
+      color: white;
+      text-align: center;
+    }
 
-  .profile {
-    padding-top: 75px;
-  }
+    .contact-box h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
 
-  .name {
-    font-size: 24px;
-  }
+    .contact-box p {
+      color: #d1d5db;
+      margin-bottom: 30px;
+    }
 
-}
-```
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      background: white;
+      color: #111827;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 900px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 46px;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .contact-box {
+        padding: 35px 25px;
+      }
+
+    }
 
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <!-- NAVBAR -->
 
-    <div class="header">
-      <h1>Phongsakorn Ano</h1>
-      <p>Logistics & Supply Chain Management</p>
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Phongsakorn.</div>
+
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="cover">
-      <img src="ltm-cover.png" class="banner">
-      <img src="profile.jpg" class="profile-img">
-    </div>
+  <!-- HERO -->
 
-    <div class="profile">
-      <button class="portfolio-btn">Portfolio</button>
+  <div class="container hero">
 
-      <div class="name">Phongsakorn Ano</div>
-      <div class="username">@phongsakorn</div>
+    <div class="hero-text">
+      <h1>
+        Logistics & <br>
+        Supply Chain <span>Portfolio</span>
+      </h1>
 
-      <div class="bio">
-        🎓 รหัสนักศึกษา: 6650100781 <br>
-        🏫 คณะบริหารธุรกิจ สาขาการจัดการโลจิสติกส์และซัพพลายเชน <br>
-        🚚 สนใจด้าน Warehouse Management และ Supply Chain <br>
-      </div>
+      <p>
+        สวัสดีครับ ผม Phongsakorn Ano นักศึกษาคณะบริหารธุรกิจ
+        สาขาการจัดการโลจิสติกส์และซัพพลายเชน
+        สนใจด้านการจัดการคลังสินค้า ระบบขนส่ง และ Supply Chain Optimization
+      </p>
 
-      <div class="section">
-        <h2>Skills</h2>
-
-        <div class="skills">
-          <div class="skill">Warehouse Management</div>
-          <div class="skill">Route Optimization</div>
-          <div class="skill">Supply Chain</div>
-          <div class="skill">Inventory Control</div>
-          <div class="skill">Microsoft Excel</div>
-          <div class="skill">Logistics Planning</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Experience</h2>
-
-        <div class="card">
-          <h3>DHL eCommerce</h3>
-          <p>Internship • Logistics Operations</p>
-        </div>
-
-        <div class="card">
-          <h3>Jastel</h3>
-          <p>Supply Chain & Transport Coordination</p>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>Contact</h2>
-
-        <div class="card">
-          <p>📧 your-email@gmail.com</p>
-          <p>🔗 linkedin.com/in/phongsakorn</p>
-        </div>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#experience" class="btn btn-secondary">My Experience</a>
       </div>
     </div>
 
-    <div class="tabs">
-      <div class="tab">Posts</div>
-      <div class="tab">Skills</div>
-      <div class="tab">Experience</div>
-      <div class="tab">Contact</div>
-    </div>
-
-    <div class="post">
-      <div class="post-top">
-        <img src="profile.jpg" class="post-avatar">
-
-        <div>
-          <div>
-            <span class="post-name">Phongsakorn Ano</span>
-            <span class="post-user">@phongsakorn · 2h</span>
-          </div>
-
-          <div class="post-text">
-            กำลังพัฒนาทักษะด้านโลจิสติกส์และการจัดการซัพพลายเชน พร้อมเรียนรู้ระบบการขนส่งและการบริหารคลังสินค้า 🚚
-          </div>
-
-          <div class="post-actions">
-            <span>💬 18</span>
-            <span>🔁 7</span>
-            <span>❤️ 142</span>
-            <span>📤</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="post">
-      <div class="post-top">
-        <img src="profile.jpg" class="post-avatar">
-
-        <div>
-          <div>
-            <span class="post-name">Phongsakorn Ano</span>
-            <span class="post-user">@phongsakorn · 5h</span>
-          </div>
-
-          <div class="post-text">
-            สนใจด้าน Route Optimization และ Warehouse Management เพื่อเพิ่มประสิทธิภาพการขนส่งและการจัดการสินค้า 📦
-          </div>
-
-          <div class="post-actions">
-            <span>💬 12</span>
-            <span>🔁 5</span>
-            <span>❤️ 96</span>
-            <span>📤</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero-image">
+      <img src="profile.jpg" alt="profile">
     </div>
 
   </div>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+
+      <p class="section-desc">
+        รหัสนักศึกษา 6650100781 • คณะบริหารธุรกิจ
+        สาขาการจัดการโลจิสติกส์และซัพพลายเชน
+        มีความสนใจด้าน Warehouse Management,
+        Transportation Systems และ Supply Chain Planning
+      </p>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Warehouse Management</h3>
+          <p>
+            มีความรู้พื้นฐานด้านการจัดการคลังสินค้า
+            การควบคุมสินค้า และการวางระบบจัดเก็บสินค้า
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Supply Chain</h3>
+          <p>
+            สนใจการบริหาร Supply Chain เพื่อเพิ่มประสิทธิภาพการขนส่ง
+            และลดต้นทุนในการดำเนินงาน
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Transportation</h3>
+          <p>
+            ศึกษาระบบขนส่งและการวางแผนเส้นทาง
+            เพื่อให้การจัดส่งมีประสิทธิภาพมากขึ้น
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <p class="section-desc">
+        ทักษะและความสามารถที่เกี่ยวข้องกับด้านโลจิสติกส์
+        และซัพพลายเชน
+      </p>
+
+      <div class="skills">
+        <div class="skill">Warehouse Management</div>
+        <div class="skill">Route Optimization</div>
+        <div class="skill">Microsoft Excel</div>
+        <div class="skill">Inventory Control</div>
+        <div class="skill">Supply Chain Management</div>
+        <div class="skill">Logistics Planning</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+    <div class="container">
+
+      <h2 class="section-title">Experience</h2>
+
+      <p class="section-desc">
+        ประสบการณ์ด้านการฝึกงานและการเรียนรู้เกี่ยวกับระบบโลจิสติกส์
+      </p>
+
+      <div class="experience-card">
+        <h3>DHL eCommerce</h3>
+        <p>
+          Internship • Logistics Operations
+          <br><br>
+          เรียนรู้กระบวนการด้านการขนส่ง การจัดการสินค้า
+          และการประสานงานด้านโลจิสติกส์
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <h3>Jastel</h3>
+        <p>
+          Supply Chain & Transport Coordination
+          <br><br>
+          ฝึกการวางแผนและติดตามกระบวนการขนส่ง
+          เพื่อเพิ่มประสิทธิภาพในการดำเนินงาน
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="contact-box">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+          สามารถติดต่อผมได้ผ่านช่องทางด้านล่าง
+        </p>
+
+        <div class="contact-links">
+          <a href="#">📧 your-email@gmail.com</a>
+          <a href="#">🔗 LinkedIn</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Phongsakorn Ano Portfolio
+  </footer>
 
 </body>
 </html>
